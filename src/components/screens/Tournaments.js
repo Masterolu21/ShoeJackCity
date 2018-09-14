@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { Card, Button, Spinner, CardSection, } from '../common';
 
 class Tournaments extends React.Component {
@@ -17,12 +17,19 @@ class Tournaments extends React.Component {
          source={require('../../Images/ShoeJackCityLogo.png')}
        />
        </View>
-       <View style={styles.formContainer}>
-
-       </View>
+       <View style={styles.formContainer} />
        </Card>
+      <ScrollView horizontal>
+
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+        <View style={{ width: 50, height: 50, backgroundColor: 'white ' }} />
+        <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+      </View>
+     </ScrollView>
+
      </View>
-       );
+   );
      }
    }
    const styles = {
@@ -35,7 +42,7 @@ class Tournaments extends React.Component {
      alignItems: 'center',
      flexGrow: 1,
      justifyContent: 'flex-start',
-     paddingBottom: 0
+     paddingBottom: 15
  },
  logo: {
    paddingTop: 15,
