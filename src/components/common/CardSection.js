@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 const CardSection = (props) => (
     <View style={styles.containerStyle}>
-    {props.children};
+    {props.children}
     </View>
   );
 
@@ -13,7 +13,6 @@ const styles = {
     padding: 5,
     backgroundColor: 'white',
     justifyContent: 'flex-start',
-    flexDirection: 'row',
     borderColor: '#ddd',
     position: 'relative'
   }

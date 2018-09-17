@@ -2,7 +2,7 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-
+import LoginForm from '../components/LoginForm';
 import Tournaments from '../components/screens/Tournaments';
 import Account from '../components/screens/Account';
 import Artists from '../components/screens/Artists';
@@ -27,6 +27,14 @@ export const AccountStack = StackNavigator({
     screen: Tournaments,
     navigationOptions: {
       title: 'Tournaments',
+      headerBackTitle: null,
+      headerBackButton: null
+    },
+  },
+  LoginForm: {
+    screen: LoginForm,
+    navigationOptions: {
+      title: 'Login',
       headerBackTitle: null,
       headerBackButton: null
     },

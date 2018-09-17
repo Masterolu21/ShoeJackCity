@@ -3,7 +3,7 @@ import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Card, Button, Spinner, CardSection } from '../common';
 import LoginForm from '../LoginForm';
-
+import router from '../../config/router';
 
 class Account extends React.Component {
   static navigationOptions = {
@@ -16,7 +16,10 @@ class Account extends React.Component {
           <Image style={styles.logo} source={require('../../Images/ShoeJackCityLogo.png')}/>
         </View>
         <View style={styles.formContainer}>
-          <LoginForm />
+          <LoginForm
+            navigation={this.props.navigation}
+              onPress={() => this.props.navigation.navigate('SignUpForm')}
+          />
         </View>
       </Card>
     </View>);

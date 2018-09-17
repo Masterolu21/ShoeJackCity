@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import { TextInput, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, withNavigation } from 'react-navigation';
 import { Button, CardSection, Input, Spinner } from './common';
 import Account from './screens/Account';
 import SignUpForm from './SignUpForm';
-
-/*const RootStack = StackNavigator({
-  account: {
-    screen: Account
-  },
-  signUpForm: {
-    screen: SignUpForm
-  },
-});
-*/
+import router from '../config/router';
 
 class LoginForm extends Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <TextInput
@@ -46,8 +38,9 @@ class LoginForm extends Component {
         </Text>
         <View style={styles.divider} />
       <TouchableOpacity
+        navigation={this.props.navigation}
         style={styles.buttonContainer}
-        onPress={() => this.props.navigation.navigate('signUpForm')}
+        onPress={() => this.props.navigation.navigate('SignUpForm')}
       >
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>

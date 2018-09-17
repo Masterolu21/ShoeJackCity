@@ -19,16 +19,45 @@ class Tournaments extends React.Component {
        </View>
        <View style={styles.formContainer} />
        </Card>
-      <ScrollView horizontal>
-
-      <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
-        <View style={{ width: 50, height: 50, backgroundColor: 'white ' }} />
-        <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+       <ScrollView horizontal>
+        <Card>
+        <View style={{ flex: 1, flexDirection: 'row'}}>
+        <Image
+          style={styles.product}
+          source={require('../../Images/aj_4_toro.png')}
+        />
+        <Image
+          style={styles.product}
+          source={require('../../Images/aj_4_toro.png')}
+        />
+        <Image
+          style={styles.product}
+          source={require('../../Images/aj_4_toro.png')}
+        />
       </View>
+     </Card>
      </ScrollView>
 
+     <ScrollView horizontal>
+      <Card>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+      <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+      />
+      <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+      />
+      <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+      />
+    </View>
+   </Card>
+   </ScrollView>
      </View>
+
    );
      }
    }
@@ -48,7 +77,12 @@ class Tournaments extends React.Component {
    paddingTop: 15,
    width: 50,
    height: 50,
-
+ },
+ product: {
+   width: 100,
+   height: 100,
+   paddingBottom: 15,
+   marginRight: 50
  }
 };
 export default Tournaments;
