@@ -19,23 +19,29 @@ class Tournaments extends React.Component {
        </View>
        <View style={styles.formContainer} />
        </Card>
+       <ScrollView>
        <ScrollView horizontal>
-        <Card>
-        <View style={{ flex: 1, flexDirection: 'row'}}>
+       <Card>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ flex: 1, flexDirection: 'column'}}>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
         />
+        <Text style={styles.productDescription}>
+         Air Jordan 4 Retro Toro Bravo
+       </Text>
+       </View>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
         />
-        <Image
+      <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
-        />
+      />
       </View>
-     </Card>
+      </Card>
      </ScrollView>
 
      <ScrollView horizontal>
@@ -55,6 +61,64 @@ class Tournaments extends React.Component {
       />
     </View>
    </Card>
+   </ScrollView>
+
+   <ScrollView horizontal>
+    <Card>
+    <View style={{ flex: 1, flexDirection: 'row' }}>
+    <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+    />
+    <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+    />
+    <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+    />
+  </View>
+ </Card>
+ </ScrollView>
+
+ <ScrollView horizontal>
+  <Card>
+  <View style={{ flex: 1, flexDirection: 'row' }}>
+  <Image
+    style={styles.product}
+    source={require('../../Images/aj_4_toro.png')}
+  />
+  <Image
+    style={styles.product}
+    source={require('../../Images/aj_4_toro.png')}
+  />
+  <Image
+    style={styles.product}
+    source={require('../../Images/aj_4_toro.png')}
+  />
+</View>
+</Card>
+</ScrollView>
+
+<ScrollView horizontal>
+ <Card>
+ <View style={{ flex: 1, flexDirection: 'row' }}>
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+</View>
+</Card>
+</ScrollView>
    </ScrollView>
      </View>
 
@@ -81,8 +145,16 @@ class Tournaments extends React.Component {
  product: {
    width: 100,
    height: 100,
-   paddingBottom: 15,
+   paddingBottom: 5,
    marginRight: 50
+ },
+ productDescription: {
+   fontsize: 12,
+   textAlign: 'center',
+   fontStyle: 'italic',
+   color: 'black',
+   marginbottom: 10
+
  }
 };
 export default Tournaments;

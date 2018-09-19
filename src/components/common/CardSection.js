@@ -9,12 +9,10 @@ const CardSection = (props) => (
 
 const styles = {
   containerStyle: {
-    borderBottomWidth: 1,
+    paddingBottom: 10,
     padding: 5,
-    backgroundColor: 'white',
-    justifyContent: 'flex-start',
+    backgroundColor: '#F13C20',
     borderColor: '#ddd',
-    position: 'relative'
   }
 };
 
