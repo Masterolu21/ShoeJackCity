@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { Card, Button, Spinner, CardSection, } from '../common';
+import { View, Text, Image, ScrollView, ImageBackground } from 'react-native';
+import { TournamentCard, Button, Spinner, CardSection, } from '../common';
 
 class Tournaments extends React.Component {
  static navigationOptions= {
@@ -9,151 +9,264 @@ class Tournaments extends React.Component {
    render() {
      return (
 
-     <View style={styles.containerStyle}>
-       <Card>
+    <ImageBackground source={require('../../Images/Background.png')} style={styles.backgroundImage}>
+       <TournamentCard>
        <View style={styles.logoContainer}>
        <Image
          style={styles.logo}
          source={require('../../Images/ShoeJackCityLogo.png')}
        />
        </View>
-       <View style={styles.formContainer} />
-       </Card>
+       </TournamentCard>
+       <View style={styles.formContainer}>
        <ScrollView>
-       <ScrollView horizontal>
-       <Card>
+       <TournamentCard style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ flex: 1, flexDirection: 'column'}}>
+        <View style={styles.rectangle}>
+        <Text style={styles.TimeStyle}>
+         10AM
+        </Text>
+        </View>
+        <ScrollView horizontal>
+        <View style={{ flex: 1, flexDirection: 'column' }}>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
         />
         <Text style={styles.productDescription}>
-         Air Jordan 4 Retro Toro Bravo
+         Air Jordan 4{'\n'}
+         Retro Toro Bravo
        </Text>
        </View>
+       <View style={{ flex: 1, flexDirection: 'column' }}>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
         />
+        <Text style={styles.productDescription}>
+         Air Jordan 4{'\n'}
+         Retro Toro Bravo
+       </Text>
+        </View>
+        <View style={{ flex: 1, flexDirection: 'column' }}>
       <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
       />
-      </View>
-      </Card>
-     </ScrollView>
-
-     <ScrollView horizontal>
-      <Card>
-      <View style={{ flex: 1, flexDirection: 'row' }}>
-      <Image
-        style={styles.product}
-        source={require('../../Images/aj_4_toro.png')}
-      />
-      <Image
-        style={styles.product}
-        source={require('../../Images/aj_4_toro.png')}
-      />
-      <Image
-        style={styles.product}
-        source={require('../../Images/aj_4_toro.png')}
-      />
-    </View>
-   </Card>
-   </ScrollView>
-
-   <ScrollView horizontal>
-    <Card>
-    <View style={{ flex: 1, flexDirection: 'row' }}>
-    <Image
-      style={styles.product}
-      source={require('../../Images/aj_4_toro.png')}
-    />
-    <Image
-      style={styles.product}
-      source={require('../../Images/aj_4_toro.png')}
-    />
-    <Image
-      style={styles.product}
-      source={require('../../Images/aj_4_toro.png')}
-    />
-  </View>
- </Card>
- </ScrollView>
-
- <ScrollView horizontal>
-  <Card>
-  <View style={{ flex: 1, flexDirection: 'row' }}>
-  <Image
-    style={styles.product}
-    source={require('../../Images/aj_4_toro.png')}
-  />
-  <Image
-    style={styles.product}
-    source={require('../../Images/aj_4_toro.png')}
-  />
-  <Image
-    style={styles.product}
-    source={require('../../Images/aj_4_toro.png')}
-  />
-</View>
-</Card>
-</ScrollView>
-
-<ScrollView horizontal>
- <Card>
- <View style={{ flex: 1, flexDirection: 'row' }}>
- <Image
-   style={styles.product}
-   source={require('../../Images/aj_4_toro.png')}
- />
- <Image
-   style={styles.product}
-   source={require('../../Images/aj_4_toro.png')}
- />
- <Image
-   style={styles.product}
-   source={require('../../Images/aj_4_toro.png')}
- />
-</View>
-</Card>
-</ScrollView>
-   </ScrollView>
+      <Text style={styles.productDescription}>
+       Air Jordan 4{'\n'}
+       Retro Toro Bravo
+     </Text>
      </View>
+      </ScrollView>
+      </View>
+      </TournamentCard>
+
+      <TournamentCard>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+      <View style={styles.rectangle} />
+      <ScrollView horizontal>
+      <View style={{ flex: 1, flexDirection: 'column' }}>
+      <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+      />
+      <Text style={styles.productDescription}>
+       Air Jordan 4{'\n'}
+       Retro Toro Bravo
+     </Text>
+     </View>
+     <View style={{ flex: 1, flexDirection: 'column' }}>
+      <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+      />
+      <Text style={styles.productDescription}>
+       Air Jordan 4{'\n'}
+       Retro Toro Bravo
+     </Text>
+      </View>
+      <View style={{ flex: 1, flexDirection: 'column' }}>
+    <Image
+        style={styles.product}
+        source={require('../../Images/aj_4_toro.png')}
+    />
+    <Text style={styles.productDescription}>
+     Air Jordan 4{'\n'}
+     Retro Toro Bravo
+   </Text>
+   </View>
+      </ScrollView>
+    </View>
+   </TournamentCard>
+
+    <TournamentCard>
+    <View style={{ flex: 1, flexDirection: 'row' }}>
+    <View style={styles.rectangle} />
+    <ScrollView horizontal>
+    <View style={{ flex: 1, flexDirection: 'column' }}>
+    <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+    />
+    <Text style={styles.productDescription}>
+     Air Jordan 4{'\n'}
+     Retro Toro Bravo
+   </Text>
+   </View>
+   <View style={{ flex: 1, flexDirection: 'column' }}>
+    <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+    />
+    <Text style={styles.productDescription}>
+     Air Jordan 4{'\n'}
+     Retro Toro Bravo
+   </Text>
+    </View>
+    <View style={{ flex: 1, flexDirection: 'column' }}>
+  <Image
+      style={styles.product}
+      source={require('../../Images/aj_4_toro.png')}
+  />
+  <Text style={styles.productDescription}>
+   Air Jordan 4{'\n'}
+   Retro Toro Bravo
+ </Text>
+ </View>
+    </ScrollView>
+  </View>
+ </TournamentCard>
+
+ <TournamentCard>
+ <View style={{ flex: 1, flexDirection: 'row' }}>
+ <View style={styles.rectangle} />
+ <ScrollView horizontal>
+ <View style={{ flex: 1, flexDirection: 'column' }}>
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Text style={styles.productDescription}>
+  Air Jordan 4{'\n'}
+  Retro Toro Bravo
+</Text>
+</View>
+<View style={{ flex: 1, flexDirection: 'column' }}>
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Text style={styles.productDescription}>
+  Air Jordan 4{'\n'}
+  Retro Toro Bravo
+</Text>
+ </View>
+ <View style={{ flex: 1, flexDirection: 'column' }}>
+<Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+/>
+<Text style={styles.productDescription}>
+Air Jordan 4{'\n'}
+Retro Toro Bravo
+</Text>
+</View>
+ </ScrollView>
+</View>
+</TournamentCard>
+
+ <TournamentCard>
+ <View style={{ flex: 1, flexDirection: 'row' }}>
+ <View style={styles.rectangle} />
+ <ScrollView horizontal>
+ <View style={{ flex: 1, flexDirection: 'column' }}>
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Text style={styles.productDescription}>
+  Air Jordan 4{'\n'}
+  Retro Toro Bravo
+</Text>
+</View>
+<View style={{ flex: 1, flexDirection: 'column' }}>
+ <Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+ />
+ <Text style={styles.productDescription}>
+  Air Jordan 4{'\n'}
+  Retro Toro Bravo
+</Text>
+ </View>
+ <View style={{ flex: 1, flexDirection: 'column' }}>
+<Image
+   style={styles.product}
+   source={require('../../Images/aj_4_toro.png')}
+/>
+<Text style={styles.productDescription}>
+Air Jordan 4{'\n'}
+Retro Toro Bravo
+</Text>
+</View>
+ </ScrollView>
+</View>
+</TournamentCard>
+   </ScrollView>
+   </View>
+</ImageBackground>
 
    );
      }
    }
    const styles = {
+ backgroundImage: {
+  flex: 1,
+  resizeMode: 'cover', // or 'stretch'
+  },
  containerStyle: {
    flex: 1,
-   backgroundColor: '#F13C20',
-   paddingBottom: 20
+   paddingBottom: 10,
+   //backgroundColor: '#F13C20'
+ },
+ formContainer: {
  },
  logoContainer: {
      alignItems: 'center',
      flexGrow: 1,
      justifyContent: 'flex-start',
-     paddingBottom: 15
+     backgroundColor: '#F13C20'
  },
  logo: {
-   paddingTop: 15,
    width: 50,
    height: 50,
  },
  product: {
    width: 100,
    height: 100,
-   paddingBottom: 5,
-   marginRight: 50
+   marginRight: 30
  },
+ rectangle: {
+    width: 30,
+    height: 100,
+    backgroundColor: 'black'
+},
+  TimeStyle: {
+    fontSize: 18,
+    color: 'red',
+    textAlign: 'center',
+    justifyContent: 'center'
+  },
  productDescription: {
    fontsize: 12,
    textAlign: 'center',
    fontStyle: 'italic',
    color: 'black',
-   marginbottom: 10
+   flex: 1,
+   flexWrap: 'wrap',
+   marginbottom: 10,
+   marginRight: 30
 
  }
 };
