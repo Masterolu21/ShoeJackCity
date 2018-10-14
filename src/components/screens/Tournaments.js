@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Image, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
+
 import { TournamentCard, Button, Spinner, CardSection, } from '../common';
 
 class Tournaments extends React.Component {
@@ -9,7 +11,7 @@ class Tournaments extends React.Component {
    render() {
      return (
 
-    <ImageBackground source={require('../../Images/Background.png')} style={styles.backgroundImage}>
+    <View style={styles.containerStyle}>
        <TournamentCard>
        <View style={styles.logoContainer}>
        <Image
@@ -29,6 +31,7 @@ class Tournaments extends React.Component {
         </View>
         <ScrollView horizontal>
         <View style={{ flex: 1, flexDirection: 'column' }}>
+        <TouchableOpacity>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
@@ -37,8 +40,10 @@ class Tournaments extends React.Component {
          Air Jordan 4{'\n'}
          Retro Toro Bravo
        </Text>
+       </TouchableOpacity>
        </View>
        <View style={{ flex: 1, flexDirection: 'column' }}>
+       <TouchableOpacity>
         <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
@@ -47,8 +52,10 @@ class Tournaments extends React.Component {
          Air Jordan 4{'\n'}
          Retro Toro Bravo
        </Text>
+       </TouchableOpacity>
         </View>
         <View style={{ flex: 1, flexDirection: 'column' }}>
+        <TouchableOpacity>
       <Image
           style={styles.product}
           source={require('../../Images/aj_4_toro.png')}
@@ -57,6 +64,7 @@ class Tournaments extends React.Component {
        Air Jordan 4{'\n'}
        Retro Toro Bravo
      </Text>
+        </TouchableOpacity>
      </View>
       </ScrollView>
       </View>
@@ -67,6 +75,7 @@ class Tournaments extends React.Component {
       <View style={styles.rectangle} />
       <ScrollView horizontal>
       <View style={{ flex: 1, flexDirection: 'column' }}>
+      <TouchableOpacity>
       <Image
         style={styles.product}
         source={require('../../Images/aj_4_toro.png')}
@@ -75,8 +84,10 @@ class Tournaments extends React.Component {
        Air Jordan 4{'\n'}
        Retro Toro Bravo
      </Text>
+      </TouchableOpacity>
      </View>
      <View style={{ flex: 1, flexDirection: 'column' }}>
+      <TouchableOpacity>
       <Image
         style={styles.product}
         source={require('../../Images/aj_4_toro.png')}
@@ -85,8 +96,10 @@ class Tournaments extends React.Component {
        Air Jordan 4{'\n'}
        Retro Toro Bravo
      </Text>
+      </TouchableOpacity>
       </View>
       <View style={{ flex: 1, flexDirection: 'column' }}>
+      <TouchableOpacity>
     <Image
         style={styles.product}
         source={require('../../Images/aj_4_toro.png')}
@@ -95,6 +108,7 @@ class Tournaments extends React.Component {
      Air Jordan 4{'\n'}
      Retro Toro Bravo
    </Text>
+      </TouchableOpacity>
    </View>
       </ScrollView>
     </View>
@@ -215,7 +229,7 @@ Retro Toro Bravo
 </TournamentCard>
    </ScrollView>
    </View>
-</ImageBackground>
+</View>
 
    );
      }
@@ -228,7 +242,7 @@ Retro Toro Bravo
  containerStyle: {
    flex: 1,
    paddingBottom: 10,
-   //backgroundColor: '#F13C20'
+   backgroundColor: '#F13C20'
  },
  formContainer: {
  },

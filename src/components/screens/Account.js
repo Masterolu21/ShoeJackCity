@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Card, Button, Spinner, CardSection } from '../common';
 import LoginForm from '../LoginForm';
 import router from '../../config/router';
@@ -13,7 +13,7 @@ class Account extends React.Component {
     return (<View style={styles.containerStyle}>
       <Card>
         <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={require('../../Images/ShoeJackCityLogo.png')}/>
+          <Image style={styles.logo} source={require('../../Images/ShoeJackCityLogo.png')} />
         </View>
         <View style={styles.formContainer}>
           <LoginForm
