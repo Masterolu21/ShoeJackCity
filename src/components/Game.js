@@ -11,18 +11,13 @@ import { connect } from 'react-redux';
 const { height, width } = Dimensions.get('window');
 
 
-const mapDispatchToProps = (dispatch) => {
-	return ({
+const mapDispatchToProps = (dispatch) => ({
 	});
-}
 
-const mapStateToProps = (state) => {
-	return ({
+const mapStateToProps = (state) => ({
     authedUser: state.user.authedUser,
     loading: state.common.loading
 	});
-}
-
 
 
 class Game extends React.Component {
@@ -30,11 +25,10 @@ class Game extends React.Component {
     super(props);
     this.state = {
 
-    }
+    };
   }
 
   render() {
-
     return (
 
       <View style={styles.container}>
@@ -50,12 +44,13 @@ class Game extends React.Component {
               <Text style={styles.subtitle}>Round 1</Text>
               <TextInput
                 style={styles.inputField}
-                value={""}
-                placeholder={"Search"}/>
+                value={''}
+                placeholder={'Search'}
+              />
             </View>
             <View style={styles.column2}>
               <Text style={styles.subtitle}>60</Text>
-              <Image style={styles.clockImage} source={require('../../assets/icons/time.png')}></Image>
+              <Image style={styles.clockImage} source={require('../../assets/icons/time.png')} />
               <View style={styles.subcolumn}>
                 <Text style={styles.subtitle1}>MP</Text>
                 <Text style={styles.subtitle1}>BP</Text>
@@ -72,74 +67,74 @@ class Game extends React.Component {
             <ScrollView>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               <View style={styles.item}>
                 <Text style={styles.name}>Username</Text>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
             </ScrollView>
@@ -149,28 +144,25 @@ class Game extends React.Component {
         <View style={styles.footer}>
           <View style={{ flex: 1, padding: 5, flexDirection: 'row' }}>
             <View style={{ flex: 2, alignItems: 'center' }}>
-              <View style={{flex: 1, flexDirection: 'row'}}>
-                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')}></Image>
+              <View style={{ flex: 1, flexDirection: 'row' }}>
+                <Image style={styles.userImage} source={require('../../assets/avatars/avatar6.jpg')} />
                 <View style={styles.progressBar}>
                   <Text style={styles.name}>Username</Text>
-                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={ null } color={ '#429321' }></Progress.Bar>
-                  <Progress.Bar progress={0.3} width={ null }></Progress.Bar>
+                  <Progress.Bar style={{ marginBottom: 2 }} progress={0.8} width={null} color={'#429321'} />
+                  <Progress.Bar progress={0.3} width={null} />
                 </View>
               </View>
               {/* <View style={{flex: 1, flexDirection: 'row'}}>
                 <Switch value={ true } />
               </View> */}
             </View>
-            <View style={{ flex: 1 }}>
-            </View>
+            <View style={{ flex: 1 }} />
           </View>
-          <View style={{ flex: 3, padding: 5 }}>
-          </View>
+          <View style={{ flex: 3, padding: 5 }} />
         </View>
 
       </View>
     );
-
   }
 
 }
@@ -262,7 +254,6 @@ const styles = StyleSheet.create({
     padding: 5
   },
 });
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

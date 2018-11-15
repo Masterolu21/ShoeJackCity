@@ -17,7 +17,7 @@ class Tournaments extends React.Component {
        <Image
          style={styles.logo}
          source={require('../../Images/ShoeJackCityLogo.png')}
-       />
+       /> 
        </View>
        </TournamentCard>
        <View style={styles.formContainer}>
@@ -242,24 +242,28 @@ Retro Toro Bravo
  containerStyle: {
    flex: 1,
    paddingBottom: 10,
-   backgroundColor: '#F13C20'
+   backgroundColor: 'white'
  },
  formContainer: {
+   paddingBottom: 20
  },
  logoContainer: {
      alignItems: 'center',
      flexGrow: 1,
      justifyContent: 'flex-start',
-     backgroundColor: '#F13C20'
+     backgroundColor: '#F13C20',
+
  },
  logo: {
    width: 50,
    height: 50,
+   alignItems: 'center',
  },
  product: {
    width: 100,
    height: 100,
-   marginRight: 30
+   paddingRight: 30,
+   paddingLeft: 30
  },
  rectangle: {
     width: 30,
@@ -280,7 +284,8 @@ Retro Toro Bravo
    flex: 1,
    flexWrap: 'wrap',
    marginbottom: 10,
-   marginRight: 30
+   marginRight: 30,
+   marginLeft: 30
 
  }
 };
