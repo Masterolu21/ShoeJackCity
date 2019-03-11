@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import Divider from 'react-native-divider';
+import { View, Text, Button, ImageScrollView, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 
 export default class Shop extends React.Component {
   static navigationOptions= {
@@ -7,11 +9,16 @@ export default class Shop extends React.Component {
   }
     render() {
       return (
-      <View>
-        <Text>
-          This is Tab 3
-        </Text>
-      </View>
+      <View style={styles.divider} />
         );
       }
     }
+    const styles = StyleSheet.create({
+      divider: {
+      borderBottomColor: 'black',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flex: 1
+    },
+    }
+  );

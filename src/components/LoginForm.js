@@ -1,48 +1,95 @@
 import React, { Component } from 'react';
-import { TextInput, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import firebase from 'firebase';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackNavigator, withNavigation } from 'react-navigation';
 import { Button, CardSection, Input, Spinner } from './common';
-import Account from './screens/Account';
 import SignUpForm from './SignUpForm';
 import router from '../config/router';
 
 class LoginForm extends Component {
+  state = { email: '', password: '', error: '', loading: false };
+
+  //helper function
+  onButtonPress() {
+    const { email, password } = this.state;
+
+    this.setState({ error: '', loading: true });
+ /* You can change and add as many variables to a state object to a setState Call*/
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(this.onLoginSuccess.bind(this))
+      .catch(() => {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(this.onLoginSuccess.bind(this))
+          .catch(this.onLoginFail.bind(this));
+    });
+  }
+onLoginFail() {
+  this.setState({
+    error: 'Authentication Failed', loading: false });
+}
+
+onLoginSuccess() {
+  this.setState({
+    email: '',
+    password: '',
+    loading: false,
+    error: ''
+  });
+}
+
+  renderButton() {
+    if (this.state.loading) {
+      return <Spinner size="small" />;
+    }
+    return (
+      <TouchableOpacity
+      onPress={this.onButtonPress.bind(this)}
+      style={styles.buttonContainer}
+      >
+      <Text style={styles.buttonText}>LOGIN</Text>
+        </TouchableOpacity>
+    );
+  }
+
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <TextInput
+        <Input
+          value={this.state.email}
+          onChangeText={email => this.setState({ email })}
           placeholder="Username or email"
-          placeholderTextColor='white'
           returnKeyType='next'
-          style={styles.input}
           keyboardType="email-address"
-          onSubmitEditing={() => this.passwordInput.focus()}
         />
 
-        <TextInput
+        <Input
           secureTextEntry //turns text into *** good for passwords
-          label="Password"
+          value={this.state.password}
+          onChangeText={password => this.setState({ password })}
           placeholder="password"
           placeholderTextColor='white'
-          secureTextEntry
           returnKeyType='go'
           style={styles.input}
           ref={(input) => this.passwordInput = input}
         />
-      <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>LOGIN</Text>
-        </TouchableOpacity>
-        <Text style={styles.textStyle}> Need help logging in?{'\n'}
-          or
+
+        <Text style={styles.errorTextStyle}>
+          {this.state.error}
         </Text>
-        <View style={styles.divider} />
+
+      {this.renderButton()}
+
+      <Text style={styles.textStyle}> Need help logging in?{'\n'}
+          or
+      </Text>
+
+      <View style={styles.divider} />
       <TouchableOpacity
         navigation={this.props.navigation}
         style={styles.buttonContainer}
         onPress={() => this.props.navigation.navigate('SignUpForm')}
       >
-          <Text style={styles.buttonText}>Sign Up</Text>
+      <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     );
@@ -53,13 +100,11 @@ const styles = StyleSheet.create({
   container: {
     padding: 20
   },
-  input: {
-    height: 40,
-   backgroundColor: '#FCD183',
-    marginBottom: 10,
-    color: 'white',
-    paddingHorizontal: 10,
-    borderRadius: 10
+
+  errorTextStyle: {
+    alignSelf: 'center',
+    color: 'black',
+    fontSize: 20
   },
     buttonContainer: {
       backgroundColor: '#FCBA12',

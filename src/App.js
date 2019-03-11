@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import { Provider } from 'react-redux';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -7,6 +8,7 @@ import thunk from 'redux-thunk';
 import Storage from 'react-native-storage';
 import { AsyncStorage } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+
 
 import LoginForm from './components/LoginForm';
 import Tournaments from './components/screens/Tournaments';
@@ -55,7 +57,7 @@ export const AccountStack = StackNavigator({
       headerBackTitle: null,
       headerBackButton: null
     },
-  },
+  }, /*jsj*/
   Shop: {
     screen: Shop,
     navigationOptions: {
@@ -130,8 +132,16 @@ global.storage = storage;
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  //lifecyle method for firebase initialization
+  componentWillMount() {
+    firebase.initializeApp({
+    apiKey: 'AIzaSyAC6YlWV-KmLlnorSkTFSh0I0mo7ZRMIJY',
+    authDomain: 'shoejackcity-729f9.firebaseapp.com',
+    databaseURL: 'https://shoejackcity-729f9.firebaseio.com',
+    projectId: 'shoejackcity-729f9',
+    storageBucket: 'shoejackcity-729f9.appspot.com',
+    messagingSenderId: '863761628819'
+  });
   }
 
   render() {

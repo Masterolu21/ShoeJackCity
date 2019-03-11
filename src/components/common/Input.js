@@ -1,48 +1,39 @@
 import React from 'react';
-import { TextInput, View, Text } from 'react-native';
+import { TextInput, View, Text, StyleSheet } from 'react-native';
 
 const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   //functional component
 
-  const { inputStyle, labelStyle, containerStyle } = styles;
+  const { input, labelStyle, containerStyle } = styles;
   return (
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
-        placeholder={placeholder}
-        autoCorrect={false}
         secureTextEntry={secureTextEntry}
-        style={inputStyle}
+        placeholder={placeholder}
+        autocorrect={false}
         value={value}
-      onChangeText={onChangeText}
+        placeholderTextColor='white'
+        style={input}
+        onSubmitEditing={() => this.passwordInput.focus()}
+        onChangeText={onChangeText}
       />
     </View>
   );
 };
-const styles = {
-inputStyle: {
-  color: '#000',
-  paddingRight: 5,
-  paddingLeft: 5,
-  fontSize: 18,
-  lineHeight: 23, //the amount of space between each text
-  flex: 2 //add up the values of flex and take this number and divide it
-  //so 2/3 of the input style takes up the space
-},
-labelStyle:{
-  fontSize: 18,
-  paddingLeft: 20,
-  flex:  1 //add up the values of flex and take this number and divide it
-  //so 1/3 of the input style takes up the space
-},
-containerStyle: {
-  height: 40,
-  flex: 1,
-  flexDirection: 'row',
-  alignItems: 'center'
-}
+const styles = StyleSheet.create({
+  container: {
+    padding: 20
+  },
+  input: {
+    height: 40,
+   backgroundColor: '#FCD183',
+    marginBottom: 10,
+    color: 'white',
+    paddingHorizontal: 10,
+    borderRadius: 10
+  },
 
-
-};
+});
 
 export { Input };
